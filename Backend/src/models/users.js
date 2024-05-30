@@ -21,9 +21,9 @@ const users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-    }, {
-        timestamps: true,
-    })
+    },
+        { timestamps: false }
+    );
 };
 
 module.exports = users;

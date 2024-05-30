@@ -30,9 +30,9 @@ const products = (sequelize) => {
             type: DataTypes.BLOB,
             allowNull: false
         }
-    }, {
-        timestamps: true,
-    })
+    },
+        { timestamps: false }
+    );
 };
 
 module.exports = products;
