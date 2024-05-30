@@ -13,4 +13,5 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 
 products(sequelize);
 users(sequelize);
+
 module.exports = { conn: sequelize };
