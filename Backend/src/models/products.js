@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const products = (sequelize) => {
-    sequelize.define("products", {
+    return sequelize.define("products", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -31,7 +31,7 @@ const products = (sequelize) => {
             allowNull: false
         }
     },
-        { timestamps: false }
+        { timestamps: true }
     );
 };
 

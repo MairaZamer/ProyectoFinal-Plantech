@@ -11,7 +11,11 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
     logging: false,
 });
 
-products(sequelize);
-users(sequelize);
+const Products = products(sequelize);
+const Users = users(sequelize);
 
-module.exports = { conn: sequelize };
+module.exports = {
+    conn: sequelize,
+    Products,
+    Users
+};
