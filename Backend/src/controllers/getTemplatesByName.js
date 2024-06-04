@@ -1,12 +1,12 @@
-const { products } = require('../db');
+const { Products } = require('../db');
 const { Op } = require('sequelize');
 
 
 async function templateByName(req, res) {
   try {
     const { name } = req.query;
-    
-    const templates = await products.findAll({
+
+    const templates = await Products.findAll({
       where: {
         name: {
           [Op.iLike]: `%${name}%`
@@ -25,4 +25,4 @@ async function templateByName(req, res) {
   }
 };
 
-module.exports = templateByName ;
+module.exports = templateByName;

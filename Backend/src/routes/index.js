@@ -9,8 +9,8 @@ const { filterByPrice, filterByTechnology } = require('../controllers/filters');
 
 const router = Router();
 
-router.get('/templates/name', templateByName);
 router.get('/templates', allTemplates);
+router.get('/templates/name', templateByName);
 router.get('/templates/:id', templatesById);
 router.get('/login', login);
 router.get('/pagination', pagination);
