@@ -1,4 +1,4 @@
-const Router = require('express');
+const { Router } = require('express');
 const allTemplates = require('../controllers/getAllTemplates');
 const templatesById = require('../controllers/getTemplatesById');
 const templateByName = require('../controllers/getTemplatesByName');

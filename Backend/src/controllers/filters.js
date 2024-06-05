@@ -1,33 +1,34 @@
-const allTemplates = require("./getAllTemplates");
+const axios = require('axios');
 
 const filterByTechnology = async (req, res) => {
     try {
         const { tech } = req.query;
 
-        const templates = await allTemplates();
-        
-        let filteredTech = [];
-        
-        const filteredTechnology= templates.filter(template => {
-            return template.technologies.some(t => t.tech.toLowerCase() === tech.toLowerCase());
-            });
-        
-        if (filteredTech.length === 0) {
+        const response = await axios.get("https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0");
+        const templates = response.data;
+
+        const filteredTechnology = templates.filter(template => {
+            const techArray = template.technologies.split(',');
+            return techArray.some(t => t.trim().toLowerCase() === tech.toLowerCase());
+        });
+
+        if (filteredTechnology.length === 0) {
             return res.status(404).json({ message: "No se encontraron plantillas que coincidan con el filtro." });
         }
 
         res.status(200).json(filteredTechnology);
-        
+
     } catch (error) {
         res.status(500).json({ error: "Error interno del servidor" });
     }
-}
+};
 
 const filterByPrice = async (req, res) => {
     try {
         const { minimo, maximo } = req.body;
 
-        const templates = await allTemplates();
+        const response = await axios.get("https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0");
+        const templates = response.data;
 
         let filteredPrice = [];
 
@@ -52,7 +53,7 @@ const filterByPrice = async (req, res) => {
         }
 
         res.status(200).json(filteredPrice);
-    
+
     } catch (error) {
         res.status(500).json({ error: "Error interno del servidor" });
     }
