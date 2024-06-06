@@ -59,4 +59,27 @@ const filterByPrice = async (req, res) => {
     }
 };
 
-module.exports = { filterByPrice, filterByTechnology };
+const filterByCategory = async (req, res) => {
+    try {
+        const { category } = req.query;
+
+        const response = await axios.get("https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0");
+        const templates = response.data;
+
+        const filteredCategory = templates.filter(template => {
+            const categoryArray = template.categories.split(',');
+            return categoryArray.some(c => c.trim().toLowerCase() === category.toLowerCase());
+        });
+
+        if (filteredCategory.length === 0) {
+            return res.status(404).json({ message: "No se encontraron plantillas que coincidan con el filtro." });
+        }
+
+        res.status(200).json(filteredCategory);
+
+    } catch (error) {
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+};
+
+module.exports = { filterByPrice, filterByTechnology, filterByCategory };
