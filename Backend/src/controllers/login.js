@@ -1,28 +1,15 @@
-const { users } = require('../db');
+const authServices = require("../services/login");
 
-async function login(req, res){
+async function login(req, res) {
     try {
-        const { email, password } = req.query
-        
-        if(!email || !password) return res.
-        status(400).json({message: 'Faltan datos'})
-
-        const logUser = await users.findOne({
-            where: {
-                email
-            }
-        })
-
-        if(!logUser) return res.
-        status(404).json({message: 'Usuario no encontrado'})
-
-        logUser.password === password ? res.
-        status(202).json({access: true}) : res.
-        status(403).json({message: 'Contraseña incorrecta'})
-
+        const { email, password } = req.body;
+        const token = await authServices.login(email, password);
+        res.status(200).json({ token: token });
     } catch (error) {
-        res.status(500).json({error: error.message})
+        res.status(401).json({ message: "Invalid credentials." })
     }
-}
+};
 
-module.exports = login;
+module.exports = {
+    login
+}
