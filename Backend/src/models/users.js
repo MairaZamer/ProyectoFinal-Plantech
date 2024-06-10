@@ -21,6 +21,10 @@ const users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        role: {
+            type: DataTypes.ENUM("Administrator", "Customer"),
+            defaultValue: "Customer"
+        }
     },
         { timestamps: true }
     );
