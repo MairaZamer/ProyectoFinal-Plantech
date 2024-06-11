@@ -1,18 +1,34 @@
-const { users } = require('../db');
+const { Users } = require('../db');
+const bcrypt = require('bcrypt');
 
 const createUser = async (req, res) => {
     try {
-        const { email, password } = req.body
-        
-        if(!email || !password) return res.status(400).json({message: 'Faltan datos'})
+        const { username, email, password } = req.body;
 
-        const user = await users.findOrCreate({where: { email, password }})
+        if (!username || !email || !password) {
+            return res.status(400).json({ message: 'Faltan datos' });
+        }
 
-        res.status(200).json(user)
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const [user, created] = await Users.findOrCreate({
+            where: { email },
+            defaults: {
+                username,
+                email,
+                password: hashedPassword
+            }
+        });
+
+        if (!created) {
+            return res.status(409).json({ message: 'El usuario ya existe' });
+        }
+
+        res.status(201).json(user);
 
     } catch (error) {
-        res.status(500).json({ error: error.message})
+        res.status(500).json({ error: error.message });
     }
-}
+};
 
-module.exports = createUser;
+module.exports = createUser; 
