@@ -3,7 +3,7 @@
         {
             "id": 1,
             "price": 18,
-            "product name": "Jenkins Inc",
+            "name": "Jenkins Inc",
             "image": "http://dummyimage.com/241x100.png/5fa2dd/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "price": 88,
-            "product name": "Dickinson Inc",
+            "name": "Dickinson Inc",
             "image": "http://dummyimage.com/141x100.png/ff4444/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -21,7 +21,7 @@
         {
             "id": 3,
             "price": 45,
-            "product name": "Lesch-Hessel",
+            "name": "Lesch-Hessel",
             "image": "http://dummyimage.com/179x100.png/5fa2dd/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -30,7 +30,7 @@
         {
             "id": 4,
             "price": 99,
-            "product name": "MacGyver, Tromp and Senger",
+            "name": "MacGyver, Tromp and Senger",
             "image": "http://dummyimage.com/124x100.png/dddddd/000000",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -39,7 +39,7 @@
         {
             "id": 5,
             "price": 69,
-            "product name": "Rodriguez-Cole",
+            "name": "Rodriguez-Cole",
             "image": "http://dummyimage.com/238x100.png/dddddd/000000",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -48,7 +48,7 @@
         {
             "id": 6,
             "price": 28,
-            "product name": "Purdy and Sons",
+            "name": "Purdy and Sons",
             "image": "http://dummyimage.com/129x100.png/cc0000/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -57,7 +57,7 @@
         {
             "id": 7,
             "price": 80,
-            "product name": "Satterfield-Wintheiser",
+            "name": "Satterfield-Wintheiser",
             "image": "http://dummyimage.com/140x100.png/dddddd/000000",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -66,7 +66,7 @@
         {
             "id": 8,
             "price": 92,
-            "product name": "Daugherty, Nikolaus and Konopelski",
+            "name": "Daugherty, Nikolaus and Konopelski",
             "image": "http://dummyimage.com/237x100.png/5fa2dd/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -75,7 +75,7 @@
         {
             "id": 9,
             "price": 86,
-            "product name": "Stamm, Bayer and Murazik",
+            "name": "Stamm, Bayer and Murazik",
             "image": "http://dummyimage.com/193x100.png/cc0000/ffffff",
             "technologies": "Angular",
             "categorias": "tecnologia",
@@ -84,7 +84,7 @@
         {
             "id": 10,
             "price": 16,
-            "product name": "Ullrich-Tillman",
+            "name": "Ullrich-Tillman",
             "image": "http://dummyimage.com/122x100.png/dddddd/000000",
             "technologies": "Angular",
             "categorias": "educacion",
@@ -93,7 +93,7 @@
         {
             "id": 11,
             "price": 9,
-            "product name": "Kunze and Sons",
+            "name": "Kunze and Sons",
             "image": "http://dummyimage.com/246x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -102,7 +102,7 @@
         {
             "id": 12,
             "price": 13,
-            "product name": "Grant-Borer",
+            "name": "Grant-Borer",
             "image": "http://dummyimage.com/149x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -111,7 +111,7 @@
         {
             "id": 13,
             "price": 91,
-            "product name": "Metz-Dare",
+            "name": "Metz-Dare",
             "image": "http://dummyimage.com/203x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -120,7 +120,7 @@
         {
             "id": 14,
             "price": 59,
-            "product name": "Kuvalis Inc",
+            "name": "Kuvalis Inc",
             "image": "http://dummyimage.com/142x100.png/5fa2dd/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -129,7 +129,7 @@
         {
             "id": 15,
             "price": 43,
-            "product name": "Osinski Group",
+            "name": "Osinski Group",
             "image": "http://dummyimage.com/234x100.png/dddddd/000000",
             "technologies": "React",
             "categorias": "educacion",
@@ -138,7 +138,7 @@
         {
             "id": 16,
             "price": 8,
-            "product name": "Predovic Group",
+            "name": "Predovic Group",
             "image": "http://dummyimage.com/242x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -147,7 +147,7 @@
         {
             "id": 17,
             "price": 12,
-            "product name": "Jast LLC",
+            "name": "Jast LLC",
             "image": "http://dummyimage.com/152x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -156,7 +156,7 @@
         {
             "id": 18,
             "price": 65,
-            "product name": "Kirlin and Sons",
+            "name": "Kirlin and Sons",
             "image": "http://dummyimage.com/140x100.png/ff4444/ffffff",
             "technologies": "React",
             "categorias": "educacion",
@@ -165,7 +165,7 @@
         {
             "id": 19,
             "price": 43,
-            "product name": "Glover, Howe and Gutkowski",
+            "name": "Glover, Howe and Gutkowski",
             "image": "http://dummyimage.com/199x100.png/dddddd/000000",
             "technologies": "React",
             "categorias": "educacion",
@@ -174,7 +174,7 @@
         {
             "id": 20,
             "price": 26,
-            "product name": "Purdy Group",
+            "name": "Purdy Group",
             "image": "http://dummyimage.com/156x100.png/ff4444/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -183,7 +183,7 @@
         {
             "id": 21,
             "price": 60,
-            "product name": "Upton, Jacobs and Armstrong",
+            "name": "Upton, Jacobs and Armstrong",
             "image": "http://dummyimage.com/149x100.png/dddddd/000000",
             "technologies": "React",
             "categorias": "moda",
@@ -192,7 +192,7 @@
         {
             "id": 22,
             "price": 27,
-            "product name": "Baumbach LLC",
+            "name": "Baumbach LLC",
             "image": "http://dummyimage.com/162x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -201,7 +201,7 @@
         {
             "id": 23,
             "price": 72,
-            "product name": "Murazik, Johns and Hoppe",
+            "name": "Murazik, Johns and Hoppe",
             "image": "http://dummyimage.com/238x100.png/ff4444/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -210,7 +210,7 @@
         {
             "id": 24,
             "price": 77,
-            "product name": "Zboncak-Larkin",
+            "name": "Zboncak-Larkin",
             "image": "http://dummyimage.com/101x100.png/ff4444/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -219,7 +219,7 @@
         {
             "id": 25,
             "price": 42,
-            "product name": "Beahan-Baumbach",
+            "name": "Beahan-Baumbach",
             "image": "http://dummyimage.com/231x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -228,7 +228,7 @@
         {
             "id": 26,
             "price": 73,
-            "product name": "Erdman, Volkman and Reichel",
+            "name": "Erdman, Volkman and Reichel",
             "image": "http://dummyimage.com/123x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -237,7 +237,7 @@
         {
             "id": 27,
             "price": 73,
-            "product name": "Kuphal-Gerhold",
+            "name": "Kuphal-Gerhold",
             "image": "http://dummyimage.com/161x100.png/ff4444/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -246,7 +246,7 @@
         {
             "id": 28,
             "price": 26,
-            "product name": "Mills, Wiegand and McLaughlin",
+            "name": "Mills, Wiegand and McLaughlin",
             "image": "http://dummyimage.com/201x100.png/dddddd/000000",
             "technologies": "React",
             "categorias": "moda",
@@ -255,7 +255,7 @@
         {
             "id": 29,
             "price": 12,
-            "product name": "Donnelly-Hickle",
+            "name": "Donnelly-Hickle",
             "image": "http://dummyimage.com/239x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "moda",
@@ -264,7 +264,7 @@
         {
             "id": 30,
             "price": 30,
-            "product name": "Kiehn, Stracke and Torp",
+            "name": "Kiehn, Stracke and Torp",
             "image": "http://dummyimage.com/149x100.png/cc0000/ffffff",
             "technologies": "React",
             "categorias": "moda",

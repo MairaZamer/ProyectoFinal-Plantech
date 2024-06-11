@@ -3,15 +3,17 @@ const { Sequelize } = require("sequelize");
 const products = require("./models/products");
 const users = require("./models/users");
 
-/* const fs = require('fs');
-const path = require('path'); */
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/plantech`, {
     logging: false,
 });
 
-products(sequelize);
-users(sequelize);
+const Products = products(sequelize);
+const Users = users(sequelize);
 
-module.exports = { conn: sequelize };
+module.exports = {
+    conn: sequelize,
+    Products,
+    Users
+};

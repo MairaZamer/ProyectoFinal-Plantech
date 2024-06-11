@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const users = (sequelize) => {
-    sequelize.define("users", {
+    return sequelize.define("Users", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -21,8 +21,12 @@ const users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        role: {
+            type: DataTypes.ENUM("Administrator", "Customer"),
+            defaultValue: "Customer"
+        }
     },
-        { timestamps: false }
+        { timestamps: true }
     );
 };
 
