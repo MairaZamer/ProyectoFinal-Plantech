@@ -9,7 +9,7 @@ const pagination = async (req, res) => {
             return res.status(400).json({ error: 'El número de página debe ser un número entero mayor que 0' });
         }
 
-        const response = await axios.get("https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0");
+        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
         const templates = response.data;
 
         if (!Array.isArray(templates)) {
