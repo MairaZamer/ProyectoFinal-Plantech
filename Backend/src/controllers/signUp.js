@@ -1,4 +1,4 @@
-const { Users } = require('../db');
+const { User } = require('../db');
 const bcrypt = require('bcrypt');
 
 const createUser = async (req, res) => {
@@ -11,7 +11,7 @@ const createUser = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const [user, created] = await Users.findOrCreate({
+        const [user, created] = await User.findOrCreate({
             where: { email },
             defaults: {
                 username,

@@ -1,28 +1,28 @@
 const axios = require('axios');
 
-async function templateByName(req, res) {
+async function booksByName(req, res) {
   try {
     const { name } = req.query;
 
     if (!name) {
       res.status(400).json({ error: 'El parámetro "name" es requerido' });
       return;
-    }    
+    }
 
-    const apiUrl = `https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0`;
+    const apiUrl = `https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0`;
 
     const response = await axios.get(apiUrl);
-    const templates = response.data;
+    const books = response.data;
 
-    const filteredName = templates.filter(template => {
-      return template.name && template.name.toLowerCase().includes(name.toLowerCase());
-    });    
+    const filteredName = books.filter(book => {
+      return book.name && book.name.toLowerCase().includes(name.toLowerCase());
+    });
 
     if (filteredName.length === 0) {
       res.status(404).json({ error: 'No se encontró ningún resultado' });
       return;
     }
-    
+
     res.status(200).json(filteredName);
 
   } catch (error) {
@@ -30,7 +30,7 @@ async function templateByName(req, res) {
   }
 };
 
-module.exports = templateByName;
+module.exports = booksByName;
 
 
 // const { Products } = require('../db');

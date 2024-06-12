@@ -1,25 +1,27 @@
-const { Products } = require('../db');
+const { Book } = require('../db');
 const axios = require("axios");
 
-const allTemplates = async (req, res) => {
+const allBooks = async (req, res) => {
     try {
-        const response = await axios.get("https://my.api.mockaroo.com/prueba_pf.json?key=a5f575a0");
+        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
         let DB = await response.data.map(e => ({
             id: e.id,
             name: e.name,
+            editorial: e.editorial,
+            category: e.category,
+            author: e.author,
             price: e.price,
             image: e.image,
-            technologies: e.technologies,
-            categories: e.categories,
+            description: e.description,
             file: e.file
         }))
 
-        let getDB = await Products.findAll();
+        let getDB = await Book.findAll();
 
         if (!getDB.length) {
-            await Products.bulkCreate(DB);
+            await Book.bulkCreate(DB);
             console.log("Se guardaron los datos correctamente");
-            getDB = await Products.findAll();
+            getDB = await Book.findAll();
         }
         return res.status(200).json(response.data);
     } catch (error) {
@@ -27,4 +29,4 @@ const allTemplates = async (req, res) => {
     }
 };
 
-module.exports = allTemplates;
+module.exports = allBooks;
