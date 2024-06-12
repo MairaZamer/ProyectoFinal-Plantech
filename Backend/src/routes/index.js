@@ -1,7 +1,7 @@
 const { Router } = require('express');
-const allTemplates = require('../controllers/getAllTemplates');
-const templatesById = require('../controllers/getTemplatesById');
-const templateByName = require('../controllers/getTemplatesByName');
+const allBooks = require('../controllers/getAllBooks');
+const booksById = require('../controllers/getBooksById');
+const booksByName = require('../controllers/getBooksByName');
 const pagination = require('../controllers/pagination');
 const { filterByPrice, filterByTechnology, filterByCategory } = require('../controllers/filters');
 const { sortTemplatesAlphabetically } = require('../controllers/filtersOrder');
@@ -12,9 +12,9 @@ const cors = require("cors");
 const router = Router();
 router.use(cors());
 
-router.get('/templates', allTemplates);
-router.get('/templates/name', templateByName);
-router.get('/templates/:id', templatesById);
+router.get('/books', allBooks);
+router.get('/books/name', booksByName);
+router.get('/books/:id', booksById);
 router.get('/pagination', pagination);
 router.get('/price', filterByPrice);
 router.get('/tech', filterByTechnology);

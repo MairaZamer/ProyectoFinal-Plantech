@@ -1,19 +1,19 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const products = require("./models/products");
-const users = require("./models/users");
+const book = require("./models/book");
+const user = require("./models/user");
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/plantech`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ebookspalace`, {
     logging: false,
 });
 
-const Products = products(sequelize);
-const Users = users(sequelize);
+const Book = book(sequelize);
+const User = user(sequelize);
 
 module.exports = {
     conn: sequelize,
-    Products,
-    Users
+    Book,
+    User
 };

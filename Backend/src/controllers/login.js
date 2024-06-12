@@ -1,4 +1,4 @@
-const { Users } = require('../db');
+const { User } = require('../db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { Op } = require('sequelize');
@@ -12,7 +12,7 @@ const login = async (req, res) => {
             return res.status(400).json({ message: 'Faltan datos' });
         }
 
-        const user = await Users.findOne({
+        const user = await User.findOne({
             where: {
                 [Op.or]: [
                     { username: usernameOrEmail },
