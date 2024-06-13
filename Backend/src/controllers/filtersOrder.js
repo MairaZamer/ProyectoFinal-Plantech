@@ -1,13 +1,12 @@
-const axios = require('axios');
+const { Book } = require('../db');
 
 const sortTemplatesAlphabetically = async (req, res) => {
     try {
         const { order } = req.params;
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        const templates = response.data;
+        const books = await Book.findAll();
         
-        const sortedTemplates = templates.sort((a, b) => {
+        const sortedTemplates = books.sort((a, b) => {
             if (a.name.toLowerCase() < b.name.toLowerCase()) return order === 'desc' ? 1 : -1;
             if (a.name.toLowerCase() > b.name.toLowerCase()) return order === 'desc' ? -1 : 1;
             return 0;
@@ -24,8 +23,7 @@ const filterByPrice = async (req, res) => {
     try {
         const { sort } = req.query;
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        let books = response.data;
+        const books = await Book.findAll();
 
         if (sort === 'asc') {
             books.sort((a, b) => a.price - b.price);

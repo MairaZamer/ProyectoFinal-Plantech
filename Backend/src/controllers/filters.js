@@ -1,11 +1,10 @@
-const axios = require('axios');
+const { Book } = require('../db');
 
 const filterByEditorial = async (req, res) => {
     try {
         const { editorial } = req.query;
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        const books = response.data;
+        const books = await Book.findAll();
 
         const filteredEditorial = books.filter(book => {
             const bookArray = book.editorial.split(',');
@@ -27,8 +26,7 @@ const filterByCategory = async (req, res) => {
     try {
         const { category } = req.query;
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        const books = response.data;
+        const books = await Book.findAll();
 
         const filteredCategory = books.filter(book => {
             const categoryArray = book.category.split(',');
@@ -50,8 +48,7 @@ const filterByAuthor = async (req, res) => {
     try {
         const { author } = req.query;
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        const books = response.data;
+        const books = await Book.findAll();
 
         const filteredAuthor = books.filter(book => {
             const authorArray = book.author.split(',');
