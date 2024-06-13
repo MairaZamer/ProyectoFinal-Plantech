@@ -3,6 +3,7 @@ const allBooks = require('../controllers/getAllBooks');
 const booksById = require('../controllers/getBooksById');
 const booksByName = require('../controllers/getBooksByName');
 const pagination = require('../controllers/pagination');
+const { postNewBook } = require('../controllers/postNewBook');
 const { filterByEditorial, filterByCategory, filterByAuthor } = require('../controllers/filters');
 const { filterByPrice, sortTemplatesAlphabetically } = require('../controllers/filtersOrder');
 const createUser = require('../controllers/signUp');
@@ -23,5 +24,6 @@ router.get('/price', filterByPrice);
 router.get('/alphabetical/:order', sortTemplatesAlphabetically);
 router.post('/signup', createUser);
 router.post('/login', login);
+router.post('/books', postNewBook)
 
 module.exports = router;
