@@ -23,7 +23,7 @@ const allBooks = async (req, res) => {
             console.log("Se guardaron los datos correctamente");
             getDB = await Book.findAll();
         }
-        return res.status(200).json(response.data);
+        return res.status(200).json(getDB);
     } catch (error) {
         res.status(400).json({ error: error.message })
     }

@@ -1,4 +1,4 @@
-const axios = require("axios");
+const { Book } = require('../db');
 
 const pagination = async (req, res) => {
     try {
@@ -9,20 +9,19 @@ const pagination = async (req, res) => {
             return res.status(400).json({ error: 'El número de página debe ser un número entero mayor que 0' });
         }
 
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
-        const templates = response.data;
+        const books = await Book.findAll();
 
-        if (!Array.isArray(templates)) {
+        if (!Array.isArray(books)) {
             throw new Error('Error al obtener las plantillas');
         }
 
-        const pageNumber = Math.ceil(templates.length / productsByPage);
+        const pageNumber = Math.ceil(books.length / productsByPage);
 
         if (page > pageNumber) {
             return res.status(400).json({ error: `El número de página no puede ser mayor que ${pageNumber}` });
         }
 
-        const paginated = templates.slice((page - 1) * productsByPage, page * productsByPage);
+        const paginated = books.slice((page - 1) * productsByPage, page * productsByPage);
         res.status(200).json(paginated);
 
     } catch (error) {

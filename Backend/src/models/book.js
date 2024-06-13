@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const book = (sequelize) => {
-    return sequelize.define("book", {
+    return sequelize.define("Book", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -35,7 +35,7 @@ const book = (sequelize) => {
             allowNull: false
         },
         file: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false
         }
     },
