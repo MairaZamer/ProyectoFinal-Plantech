@@ -35,7 +35,7 @@ const book = (sequelize) => {
             allowNull: false
         },
         file: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false
         }
     },
