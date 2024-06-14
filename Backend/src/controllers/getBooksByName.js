@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 async function booksByName(req, res) {
   try {
     const { name } = req.query;
+    console.log("inicio", name)
 
     if (!name) {
       return res.status(400).json({ error: 'El parámetro "name" es requerido' });
@@ -16,6 +17,7 @@ async function booksByName(req, res) {
         }
       }
     });
+    console.log("medio", books)
 
     if (books.length === 0) {
       return res.status(404).json({ error: 'No se encontró ningún resultado' });

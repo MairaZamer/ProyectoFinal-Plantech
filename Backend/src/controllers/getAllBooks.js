@@ -7,8 +7,8 @@ const allBooks = async (req, res) => {
     const { page = 1, productsByPage = 30, editorial, category, author } = req.query;
 
     try {
-        
-        const response = await axios.get("https://my.api.mockaroo.com/e_books_palace.json?key=a5f575a0");
+
+        const response = await axios.get("http://127.0.0.1:5500/datosEbookspalace.json");
         const DB = response.data.map(e => ({
             id: e.id,
             name: e.name,
