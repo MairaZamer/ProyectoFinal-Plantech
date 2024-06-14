@@ -1,68 +1,33 @@
-const { Book } = require('../db');
-
-const filterByEditorial = async (req, res) => {
+const filterByEditorial = (books, editorial) => {
     try {
-        const { editorial } = req.query;
-
-        const books = await Book.findAll();
-
-        const filteredEditorial = books.filter(book => {
+        return books.filter(book => {
             const bookArray = book.editorial.split(',');
             return bookArray.some(edit => edit.trim().toLowerCase() === editorial.toLowerCase());
         });
-
-        if (filteredEditorial.length === 0) {
-            return res.status(404).json({ message: "No se encontraron plantillas que coincidan con el filtro." });
-        }
-
-        res.status(200).json(filteredEditorial);
-
     } catch (error) {
-        res.status(500).json({ error: "Error interno del servidor" });
+        throw new Error('Error al filtrar por editorial');
     }
 };
 
-const filterByCategory = async (req, res) => {
+const filterByCategory = (books, category) => {
     try {
-        const { category } = req.query;
-
-        const books = await Book.findAll();
-
-        const filteredCategory = books.filter(book => {
+        return books.filter(book => {
             const categoryArray = book.category.split(',');
             return categoryArray.some(c => c.trim().toLowerCase() === category.toLowerCase());
         });
-
-        if (filteredCategory.length === 0) {
-            return res.status(404).json({ message: "No se encontraron plantillas que coincidan con el filtro." });
-        }
-
-        res.status(200).json(filteredCategory);
-
     } catch (error) {
-        res.status(500).json({ error: "Error interno del servidor" });
+        throw new Error('Error al filtrar por categoría');
     }
 };
 
-const filterByAuthor = async (req, res) => {
+const filterByAuthor = (books, author) => {
     try {
-        const { author } = req.query;
-
-        const books = await Book.findAll();
-
-        const filteredAuthor = books.filter(book => {
+        return books.filter(book => {
             const authorArray = book.author.split(',');
-            return authorArray.some(c => c.trim().toLowerCase() === author.toLowerCase());
+            return authorArray.some(a => a.trim().toLowerCase() === author.toLowerCase());
         });
-
-        if (filteredAuthor.length === 0) {
-            return res.status(404).json({ message: "No se encontraron plantillas que coincidan con el filtro." });
-        }
-
-        res.status(200).json(filteredAuthor);
-
     } catch (error) {
-        res.status(500).json({ error: "Error interno del servidor" });
+        throw new Error('Error al filtrar por autor');
     }
 };
 
