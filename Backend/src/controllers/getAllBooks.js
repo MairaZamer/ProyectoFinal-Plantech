@@ -1,35 +1,16 @@
 const { Book } = require('../db');
-const axios = require("axios");
 const pagination = require('./pagination');
 const { filterByEditorial, filterByCategory, filterByAuthor } = require('./filters');
 
 const allBooks = async (req, res) => {
+
     const { page = 1, productsByPage = 30, editorial, category, author } = req.query;
 
     try {
 
-        const response = await axios.get("http://127.0.0.1:5500/datosEbookspalace.json");
-        const DB = response.data.map(e => ({
-            id: e.id,
-            name: e.name,
-            editorial: e.editorial,
-            category: e.category,
-            author: e.author,
-            price: e.price,
-            image: e.image,
-            description: e.description,
-            file: e.file
-        }));
+        const books = await Book.findAll();
 
-        let getDB = await Book.findAll();
-
-        if (!getDB.length) {
-            await Book.bulkCreate(DB);
-            console.log("Se guardaron los datos correctamente");
-            getDB = await Book.findAll();
-        }
-
-        let filteredBooks = [...getDB];
+        let filteredBooks = books;
 
         if (editorial) {
             filteredBooks = filterByEditorial(filteredBooks, editorial);
